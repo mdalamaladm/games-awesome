@@ -1,0 +1,8 @@
+.row-box {
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+}

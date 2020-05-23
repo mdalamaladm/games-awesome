@@ -1,0 +1,37 @@
+.column-box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.column-box:hover {
+    background-color: lightgray;
+}
+
+.button {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin: 3px;
+    background-color:lightskyblue;
+    border-radius: 2px;
+    cursor: pointer;   
+    border-radius: 50%; 
+}
+
+.button span {
+    position: relative;
+    top: -1px;
+}
+
+.button:hover span {
+    animation-name: updown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes updown { 
+    0% {top: -2px;}
+    50% {top: 2px;}
+    100% {top: -2px;}
+}

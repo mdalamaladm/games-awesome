@@ -1,0 +1,17 @@
+.tic-tac-toe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 230px);
+    height: 100%;
+  }
+
+.back-button {
+    color: red;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: rgb(190, 6, 6);
+}

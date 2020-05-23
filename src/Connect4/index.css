@@ -1,0 +1,14 @@
+.connect-four {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 230px);
+  height: 100%;
+}
+
+.connect-four-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
