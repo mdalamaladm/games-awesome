@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+import './tictactoe.scss';
 import { useHistory } from 'react-router-dom';
 
 const TicTacToe = () => {
@@ -13,7 +13,6 @@ const TicTacToe = () => {
             <h1>Tic Tac Toe</h1>
             <h3>Segera Hadir</h3>
             <p className="back-button" onClick={backHome}>Kembali</p>
-
         </div>
     );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import Column from '../Column';
-import Text from '../Text';
-import {initialState, reducer} from '../reducers';
-import checkAll from '../rules';
-import './index.scss';
+import Column from './components/Column/column';
+import Text from './components/Text/text';
+import {reducer, initialState} from './reducer/addCoin';
+import checkAll from './utils/rules';
+import './connect4.scss';
 
   
-const Board = () => {
+const Connect4 = () => {
 
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
@@ -62,4 +62,4 @@ const Board = () => {
     )
 }
 
-export default Board;
+export default Connect4;

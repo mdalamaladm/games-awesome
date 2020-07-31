@@ -3,9 +3,9 @@ import {
     Switch,
     Route,
 } from 'react-router-dom';
-import TicTacToe from './TicTacToe';
-import Connect4 from './Connect4';
-import Home from './Home';
+import TicTacToe from './scenes/TicTacToe/tictactoe';
+import Connect4 from './scenes/Connect4/connect4';
+import Home from './scenes/Home/home';
 // import App from './App';
 
 const RootRouter = () => {

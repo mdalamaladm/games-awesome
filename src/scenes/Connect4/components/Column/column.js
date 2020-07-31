@@ -1,6 +1,6 @@
 import React from 'react';
-import Coin from 'Connect4/Coin'
-import "./index.scss";
+import Coin from '../Coin/coin'
+import "./column.scss";
 
 const Column = ({column, onClick, isEnded}) => {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./index.scss";
+import "./text.scss";
 
 const Text = ({winner, currentPlayer, gameEnd}) => {
   return (

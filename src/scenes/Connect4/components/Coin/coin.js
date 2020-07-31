@@ -1,5 +1,5 @@
 import React from 'react';
-import "./index.scss";
+import "./coin.scss";
 
 const Coin = ({column, row}) => {
     return (
