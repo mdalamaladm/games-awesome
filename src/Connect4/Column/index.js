@@ -1,17 +1,11 @@
 import React from 'react';
-import Coin from 'Coin'
+import Coin from 'Connect4/Coin'
 import "./index.css";
 
 const Column = ({column, onClick}) => {
-    // const [state, dispatch] = React.useReducer(reducer, intialState)
-    // console.log(state.column)
-    // let realColumn = parseFloat(column);
-    // console.log('realColumn', realColumn)
-    // console.log('COLUMN', state.column)
 
     return (
         <div className='column-box' id={`column-${column}`}>
-            {/* Column: { state.column } */}
             <Coin row='1' column={column}/>
             <Coin row='2' column={column}/>
             <Coin row='3' column={column}/>

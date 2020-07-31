@@ -12,7 +12,7 @@ const TicTacToe = () => {
         <div className="tic-tac-toe">
             <h1>Tic Tac Toe</h1>
             <h3>Segera Hadir</h3>
-            <p class="back-button" onClick={backHome}>Kembali</p>
+            <p className="back-button" onClick={backHome}>Kembali</p>
 
         </div>
     );

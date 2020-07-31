@@ -4,7 +4,7 @@ import {
     Route,
 } from 'react-router-dom';
 import TicTacToe from './TicTacToe';
-import Connect4 from './Connect4';
+import Connect4 from './Connect4/Board';
 import Home from './Home';
 // import App from './App';
 

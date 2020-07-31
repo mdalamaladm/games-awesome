@@ -1,5 +1,6 @@
 import React from 'react';
 import Column from '../Column';
+import Text from '../Text';
 import './index.css';
   
   
@@ -9,6 +10,8 @@ import './index.css';
       beforePlayer: '',
       currentRow: 0,
       currentColumn: null,
+      gameEnd: false,
+      winner: 'red'
   }
   
   const reducer = (state, action) => {
@@ -16,13 +19,11 @@ import './index.css';
           case 'addCoin':
             for(let i = 0; i < 6; i++) {
               let coin = document.getElementById(`row-${action.value + 1}-${i + 1}`)
-              console.log(state)
               if(state.column[action.value][i] === ''){
-                  // state.column[column][i] = currentPlayer;
                 if(state.currentPlayer === 'red'){
                   coin.style.backgroundColor = 'red';
                   return {
-                      // ...state,
+                      ...state,
                       column: [
                           ...state.column.slice(0, action.value),
                           [
@@ -40,7 +41,7 @@ import './index.css';
                 } else {
                   coin.style.backgroundColor = 'black';
                   return {
-                      // ...state,
+                      ...state,
                       column: [
                           ...state.column.slice(0, action.value),
                           [
@@ -61,6 +62,16 @@ import './index.css';
             return {
               ...state
             }
+          case 'endGame':
+            return {
+              ...state,
+              gameEnd: action.value
+            }
+          case 'winner':
+            return {
+              ...state,
+              winner: action.value
+            }
           default:
             return {
               ...state
@@ -68,7 +79,7 @@ import './index.css';
       }
   }
   
-const Connect4 = () => {
+const Board = () => {
 
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
@@ -98,7 +109,6 @@ const Connect4 = () => {
             return rowTruReal;
         } else {
             rowTruReal++;
-            console.log('After Add', rowTruReal)
             return check(columReal, rowReal ,changeColumn, changeRow, rowTruReal, player);
       
         }
@@ -106,16 +116,18 @@ const Connect4 = () => {
       }
       
       let fourLine = checkAll(state.currentColumn, state.currentRow, state.beforePlayer);
-      if(fourLine === true){
-        let coin = document.getElementById(`row-${state.currentColumn + 1}-${state.currentRow + 1}`)
-        if(state.beforePlayer === 'red'){
-            coin.style.backgroundColor = 'red';
-            // alert('MERAH MENANG');
-            setTimeout(() => alert('MERAH MENANG'), 100);
-        } else if(state.beforePlayer === 'black') {
-            coin.style.backgroundColor = 'black';
-            // alert('HITAM MENANG')
-            setTimeout(() => alert('HITAM MENANG'), 100);
+      if(!state.gameEnd){
+        if(fourLine === true){
+          let coin = document.getElementById(`row-${state.currentColumn + 1}-${state.currentRow + 1}`)
+          if(state.beforePlayer === 'red'){
+              coin.style.backgroundColor = 'red';
+              dispatch({type: 'endGame', value: true})
+              dispatch({type: 'winner', value: 'red'})
+          } else if(state.beforePlayer === 'black') {
+              coin.style.backgroundColor = 'black';
+              dispatch({type: 'endGame', value: true})
+              dispatch({type: 'winner', value: 'black'})
+          }
         }
       }
 
@@ -132,9 +144,8 @@ const Connect4 = () => {
     return (
         <div className="connect-four">
           <h2 className="judul">Connect 4 Game</h2>
+          <Text winner={state.winner} currentPlayer={state.currentPlayer} gameEnd={state.gameEnd} />
           <div className="connect-four-container">
-            {/* <div className="judul"> */}
-            {/* </div> */}
             <Column column='1' onClick={() => { addCoin(dispatch, 0) }} />
             <Column column='2' onClick={() => { addCoin(dispatch, 1) }}/>
             <Column column='3' onClick={() => { addCoin(dispatch, 2) }}/>
@@ -147,4 +158,4 @@ const Connect4 = () => {
     )
 }
 
-export default Connect4;
+export default Board;
