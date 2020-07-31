@@ -1,7 +1,7 @@
 import React from 'react';
 import Column from './components/Column/column';
 import Text from './components/Text/text';
-import {reducer, initialState} from './reducer/addCoin';
+import {reducer, initialState} from './reducer';
 import checkAll from './utils/rules';
 import './connect4.scss';
 
