@@ -1,20 +1,23 @@
 import React from 'react';
 import Coin from 'Connect4/Coin'
-import "./index.css";
+import "./index.scss";
 
-const Column = ({column, onClick}) => {
+const Column = ({column, onClick, isEnded}) => {
 
-    return (
-        <div className='column-box' id={`column-${column}`}>
-            <Coin row='1' column={column}/>
-            <Coin row='2' column={column}/>
-            <Coin row='3' column={column}/>
-            <Coin row='4' column={column}/>
-            <Coin row='5' column={column}/>
-            <Coin row='6' column={column}/>
-            <div className="button"  onClick={onClick}><span>v</span></div>
-        </div>
-    )
+  const rows = [1, 2, 3, 4, 5, 6]
+  console.log('isEnded', isEnded);
+  return (
+    <div className='column-box' id={`column-${column}`}>
+      {
+        rows.map(row => {
+          return(
+            <Coin row={row} column={column}/>
+          )
+        })
+      }
+      <div className="button"  onClick={isEnded ? null : onClick}><span>v</span></div>
+    </div>
+  )
 }
 
 export default Column;

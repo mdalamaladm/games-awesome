@@ -3,6 +3,7 @@
   flex-direction: column;
   width: calc(100% - 230px);
   height: 100%;
+  padding-bottom: 60px;
 }
 
 .connect-four-container {
@@ -11,4 +12,10 @@
   align-items: center;
   width: 100%;
   height: auto;
+}
+
+.board {
+  display: flex;
+  padding: 30px;
+  background-color: rgb(228, 231, 25);
 }

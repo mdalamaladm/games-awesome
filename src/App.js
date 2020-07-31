@@ -1,18 +1,7 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import RootRouter from './Router'
 import { BrowserRouter, Link } from 'react-router-dom';
-
-// Component Bentuk Class
-
-// class App2 extends React.Component {
-
-// };
-
-//Component Bentuk Function
-
-
 
 function App() {
 
